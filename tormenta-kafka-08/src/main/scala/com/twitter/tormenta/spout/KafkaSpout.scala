@@ -19,9 +19,6 @@ package com.twitter.tormenta.spout
 import com.twitter.tormenta.scheme.Scheme
 import storm.kafka.{ KafkaSpout => StormKafkaSpout, ZkHosts, SpoutConfig }
 
-/**
- *  @author Sam Goodwin
- */
 class KafkaSpout[+T](scheme: Scheme[T], zkHost: String, brokerZkPath: String, topic: String, appID: String, zkRoot: String, startOffsetTime: Long = kafka.api.OffsetRequest.EarliestTime)
     extends SchemeSpout[T] {
   override def getSpout[R](transformer: Scheme[T] => Scheme[R], metrics: List[() => TraversableOnce[Metric[_]]]) = {

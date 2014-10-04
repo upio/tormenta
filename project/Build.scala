@@ -155,8 +155,8 @@ object TormentaBuild extends Build {
   ).dependsOn(tormentaCore % "test->test;compile->compile")
 
   lazy val tormentaKafka08 = module("kafka-08").settings(
-      libraryDependencies ++= Seq("org.apache.kafka" % "kafka_2.10"  % "0.8.1.1",
-                                 "org.apache.storm"  % "storm-kafka" % "0.9.2-incubating")
+    libraryDependencies ++= Seq("org.apache.kafka" % "kafka_2.10"  % "0.8.1.1",
+                                "org.apache.storm"  % "storm-kafka" % "0.9.2-incubating")
   ).dependsOn(tormentaCore % "test->test;compile->compile")
 
   lazy val tormentaKestrel = module("kestrel").settings(
